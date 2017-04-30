@@ -1,0 +1,576 @@
+// siatka kolumn
+@columns: 12;
+@column-width: 65;
+@gutter-width: 30;
+@total-width: 100%;
+
+.pricelist .single-col {
+	.column(12);
+	@media @tablet {
+		.column(6);
+	}
+}
+
+.contact .single-col {
+	.column(12);
+	@media @tablet {
+		.column(6);
+	}
+}
+
+
+
+.advantages .single-col {
+	.column(12);
+	@media @tablet {
+		.column(4);
+	}
+}
+
+.statistics .single-col {
+	width: 30%;
+	.column(12);
+	@media @phone {
+		.column(6);
+		width: 30%;
+	}
+	@media @tablet {
+		.column(4);
+		width: 30%;
+	}
+}
+
+
+
+.footer-main .single-col {
+	.column(12);
+	@media @phone {
+		.column(6);
+	}
+	@media @tablet {
+		.column(3);
+	}
+}
+
+
+
+// kontener
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	clear: both;
+	padding: 0 15px;
+}
+
+
+
+// Inne elementy
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+a {
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+// tytuly sekcji
+.section-title {
+	margin-bottom: 70px;
+	.center-text;
+}
+
+// Naglowki
+h1, h2 , h3 {
+	line-height: 1.1;
+} 
+
+// mixin dla przyciskow
+.basic-button(@color;@background-color) {
+	color: @color;
+	background-color: @background-color;
+	text-decoration: none;
+	.inline-block;
+	font-size: @basic-font-size;
+	font-weight: 400;
+	line-height: @basic-line-height;
+	text-transform: uppercase;
+}
+
+// glowny kontener 
+#main-container {
+	padding-top: 53px;
+}
+
+
+/***  Naglowek ***/
+header {
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: @basic-background;
+	border-bottom: 1px solid @basic-border-color;
+	box-shadow: 0 0 1px @basic-border-color;
+	.navbar {
+		height: 63px;
+			.nav-logo {
+			.float-left;
+			.center-vertical;
+			z-index: 2;
+		}
+	}
+}
+
+// Logo
+.nav-logo a img {
+	height: 42px;
+	width: 122px;
+	@media @tablet {
+		height: 60px;
+		width: 175px;
+		margin-bottom: 0;
+	}
+}
+
+// ukrywa menu glowne
+#main-menu {
+	.invisible;
+	@media @phone {
+		.block;
+	}
+}
+
+.main-menu-content {
+	.float-right;
+	.center-vertical;
+	ul {
+		.list-style-none;
+		li {
+			.float-left;
+			.block;
+			a {
+				color: @menu-link-color;
+				font-size: 15px;
+				font-family: @font-family-secondary;
+				font-weight: 400;
+				padding: 20px 14px;
+				line-height: 20px;
+				.basic-transition;
+				&:hover {
+					color: @accent-color;
+				}
+				@media @tablet {
+					padding: 20px 22px;
+				}
+			}
+			i {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+// menu mobilne
+.slicknav_menu {
+	position: fixed;
+	left: 0;
+	right: 0;
+	@media @phone {
+		.invisible;
+	}
+	i {
+		.invisible;
+	}
+	ul {
+		.section-border-bottom;
+		box-shadow: 0 0 1px @basic-border-color;
+		padding-top: 10px;
+	}
+}
+
+// glowny slider
+.bxslider {
+	.main-slide-1 {
+		background-image: url('../images/slider_1.jpeg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		&:after {
+			.dark-overlay;
+		}
+	}
+	.main-slide-2 {
+		background-image: url('../images/slider_3.jpeg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		&:after {
+			.dark-overlay;
+		}
+		@media @phone {
+		background-image: url('../images/slider_2.jpeg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		&:after {
+			.dark-overlay;
+		}
+
+		}
+	}
+}
+
+// obrazki w sliderze
+
+.bx-viewport {
+	img {
+		.invisible;
+		@media @tablet {
+			.block;
+			position: absolute;
+			right: 10%;
+			top: 20%;
+		}
+	}
+}
+
+// zawartosc slajdu
+.main-slider-content {
+	padding: 15% 2%;
+	color: @brightest-text-color;
+	position: relative;
+	z-index: 1;
+	h1 {
+		font-size: 26px;
+		line-height: 33px;
+		font-weight: 400;
+		@media @tablet {
+			font-size: 48px;
+			line-height: 60px;
+		}
+	}
+	p {
+		font-size: 12px;
+		line-height: @basic-line-height;
+		@media @tablet {
+			font-size: 18px;
+		}
+	}
+	a {
+		position: relative;
+		.basic-button(@brightest-text-color;none);
+		margin: 8px 0;
+		padding: 12px 30px;
+		border: 1px solid @brightest-text-color;
+	}
+}
+
+// Sekcja Nasze zalety
+.advantages {
+	overflow: hidden;
+	padding: 80px 0 20px;
+	.clearfix;
+	.single-col {
+		.center-text;
+		margin-bottom: 30px;
+		span {
+			.block;
+			.center-no-float;
+			margin-bottom: 20px;
+			margin-top: 20px;
+			i {
+				font-size: 30px;
+				color: @accent-color;
+			}
+			@media @tablet {
+				.inline-block;
+				.no-center-float;
+				margin-bottom: 0;
+			}
+		}
+		.services-content {
+			margin-left: 0;
+			@media @tablet {
+				margin-left: 80px;
+			}
+		}
+		@media @tablet {
+			text-align: left;
+		}
+	}
+}
+
+// Statystyki
+
+.statistics {
+	background-color: @alternate-background;
+	.overflow-fix;
+	padding: 80px 0 70px;
+	.single-col {
+		.center-text;
+		.statistics-content {
+			margin-bottom: 30px;
+			h3 {
+				font-size: 60px;
+				color: @accent-color;
+				margin: 0px;
+			}
+			p {
+				font-size: 14px;
+			}
+
+		}
+	}
+}
+
+// Cennik
+.pricelist {
+	overflow: hidden;
+	padding: 80px 0 60px;
+	.single-col {
+		margin-bottom: 30px;
+		.center-text;
+		.pricelist h2 {
+			.center-text;
+		}
+		span {
+			.inline-block;
+			.size(90px;90px);
+			background: @alternate-background;
+			.center-text;
+			.border-radius-single(50%);
+			margin-bottom: 30px;
+			.basic-transition;
+			&:hover {
+				background: @accent-color;
+			}
+			&:hover > i {
+				color: @brightest-text-color;
+				cursor: default;
+			}
+			i {
+				color: @accent-color;
+				font-size: 30px;
+				line-height: 90px;
+			}
+
+		}
+		@media @tablet {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+// Sekcja kontakt
+.contact {
+	padding: 55px 0 250px;
+	margin-bottom: 50px;
+	.section-border-top;
+	.center-text;
+	@media @tablet {
+			margin-bottom: 0;
+	}
+	.single-col p {
+		font-size: 20px;
+		@media @phone {
+			font-size: 40px;
+		}
+		@media @tablet {
+			margin-bottom: 0;
+		}
+		}	
+	}
+
+	.phone-number p a {
+		color: @basic-text-color;
+	}
+
+	.email p a {
+		color: @basic-text-color;
+	}
+
+	#phone {
+		padding-bottom: 20px;
+	}
+
+	#envelope {
+		padding-bottom: 30px;
+	}
+
+// Banner foto
+
+.photo-banner {
+		.invisible;
+		@media @desktop {
+		.block;	
+		.center-text;
+		background: url('../images/foto_baner.png') fixed 0 0 no-repeat;
+		.photo-banner-inner {
+			position: relative;
+			z-index: 0;
+			&:after {
+				.dark-overlay;
+			}
+			.container {
+				position: relative;
+				z-index: 1;
+				padding: 175px 0;
+			}
+			h2 {
+				.header-mixin(60px;26px;@brightest-text-color);
+			}
+			p {
+				font-size: 30px;
+				color: @brightest-text-color;
+				line-height: @basic-line-height;
+				@media @tablet {
+				font-size: 18px;
+			}
+		}
+	}
+}
+}
+
+// Mobilna wersja samochodu
+
+.mobile-car {
+	padding: 55px 0 55px;
+	.section-border-top;
+	.center-text;
+	@media @desktop{
+		.invisible;
+	}
+}
+
+// O mnie
+
+.about-me{
+	padding: 55px 0 10px;
+	.center-text;
+	.section-border-bottom;
+	.section-border-top;
+	.overflow-fix;
+	.single-col {
+		margin: 10px;
+		.center-text;
+		
+	}
+}
+
+.team-members {
+	.overflow-fix;
+	margin-bottom: 40px;
+}
+			
+.team-member {
+	.center-text;
+	img {
+		margin-bottom: 30px;
+		width: 100%;
+		@media @tablet {
+			width: 50%;
+		}
+	}
+	h3 {
+		.header-mixin(18px;4px);
+	}
+	span {
+		line-height: 24px;
+		margin: 0 0 17px;
+		.inline-block;
+	}
+	p {
+		margin-bottom: 20px;
+	}
+}			
+
+.memebers-social {
+	.list-style-none;
+	li {
+		.inline-block;
+		margin-right: 18px;
+		i {
+			font-size: 18px;
+			color: darken(@alternate-background, 20%);
+			.basic-transition;
+			&:hover {
+				color: darken(@alternate-background, 10%);
+			}
+		}
+	}
+}		
+
+// Sekcja opinie
+
+.opinions {
+	padding: 70px 0 30px;
+	ul {
+		padding: 0;
+	}
+}
+
+.opinions-content {
+	.center-text;
+	font-size: 18px;
+	padding-bottom: 40px;
+	p {
+		line-height: 30px;
+		font-style: italic;
+		color: @opinions-text;
+		margin-bottom: 25px;
+	}
+	h3 {
+		.center-text;
+		margin: 0 0 18px;
+	}
+
+	.pamela {
+		padding-bottom: 30px;
+	}
+	.kasper {
+		padding-bottom: 30px;
+	}
+}
+
+// fix dla slidera
+.bx-viewport {
+	min-height: 130px;
+}
+
+
+
+
+
+// Copyright
+.copyright {
+	padding: 20px 0;
+	background-color: @footer-copyright-background;
+	border-top: 1px solid @footer-social-borders;
+	.center-text;
+	p {
+		font-size: 12px;
+		color: @basic-text-color;
+		margin: 0;
+		
+	}
+	a {
+			color: @bright-text-color;
+		}
+}
+
+
